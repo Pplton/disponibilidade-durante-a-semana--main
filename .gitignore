@@ -1,0 +1,62 @@
+# Arquivos de dados (não versionar dados sensíveis)
+Entregadores.xlsx
+Pedidos.xls
+Pedidos.xlsx
+
+# Relatórios gerados
+Motoboys_Nao_Escalados.xlsx
+Motoboys_Nao_Escalados.pdf
+
+# Logs
+*.log
+disponibilidade_motoboys.log
+
+# Arquivos temporários
+*.tmp
+*.temp
+~*
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Ambientes virtuais
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Configurações locais (opcional)
+config_local.json

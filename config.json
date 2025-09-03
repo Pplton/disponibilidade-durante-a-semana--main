@@ -1,0 +1,22 @@
+{
+    "arquivos": {
+        "cadastro": "Entregadores.xlsx",
+        "agendamento": "Pedidos.xls"
+    },
+    "planilha": {
+        "header_agendamento": 3,
+        "colunas_cadastro": ["nome", "telefone", "cidade", "bairro", "cep"],
+        "coluna_entregador": "entregador",
+        "coluna_data": "data_agendamento"
+    },
+    "relatorio": {
+        "formato_data": "%d/%m/%Y",
+        "nome_excel": "Motoboys_Nao_Escalados.xlsx",
+        "nome_pdf": "Motoboys_Nao_Escalados.pdf"
+    },
+    "interface": {
+        "titulo": "Sistema de Disponibilidade de Motoboys",
+        "largura": 900,
+        "altura": 700
+    }
+}

@@ -1,0 +1,20 @@
+# Dependências do Sistema de Disponibilidade de Motoboys
+# ======================================================
+
+# Manipulação de dados
+pandas>=1.5.0
+
+# Interface gráfica
+tkcalendar>=1.6.0
+
+# Geração de relatórios PDF
+reportlab>=3.6.0
+
+# Leitura/escrita de arquivos Excel
+openpyxl>=3.0.0
+
+# Processamento de arquivos Excel antigos (.xls)
+xlrd>=2.0.0
+
+# Utilitários adicionais
+pathlib2>=2.3.0; python_version < "3.4"

@@ -1,218 +1,383 @@
-# 📋 Sistema de Disponibilidade de Motoboys
+# 🚚 Sistema de Disponibilidade de Motoboys
 
-## 📖 Descrição
+[![Python](https://img.shields.io/badge/Python-3.7+-blue.svg)](https://python.org)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen.svg)]()
 
-Sistema automatizado para análise de disponibilidade de motoboys durante a semana. O programa permite selecionar datas específicas e gera relatórios em Excel e PDF com os motoboys disponíveis (não agendados) para cada data selecionada.
+> Sistema automatizado para análise de disponibilidade de motoboys durante a semana. Permite selecionar datas específicas e gera relatórios profissionais em Excel e PDF com os motoboys disponíveis (não agendados) para cada data selecionada.
+
+## 📋 Índice
+
+- [✨ Funcionalidades](#-funcionalidades)
+- [🛠️ Instalação](#️-instalação)
+- [🚀 Uso Rápido](#-uso-rápido)
+- [📖 Guia Completo](#-guia-completo)
+- [📊 Formato das Planilhas](#-formato-das-planilhas)
+- [⚙️ Configuração](#️-configuração)
+- [🔧 Solução de Problemas](#-solução-de-problemas)
+- [📈 Exemplos de Uso](#-exemplos-de-uso)
+- [🤝 Contribuição](#-contribuição)
 
 ## ✨ Funcionalidades
 
 ### 🎯 Principais Recursos
-- **Interface gráfica intuitiva** com calendário interativo
-- **Seleção flexível de datas** para análise
-- **Geração automática de relatórios** em Excel e PDF
-- **Detecção automática** de colunas nas planilhas
-- **Formatação profissional** dos relatórios
-- **Suporte a múltiplas datas** simultaneamente
+
+- **🎨 Interface gráfica intuitiva** com calendário interativo
+- **📅 Seleção flexível de datas** para análise personalizada
+- **📊 Geração automática de relatórios** em Excel e PDF
+- **🔍 Detecção automática** de colunas nas planilhas
+- **🎨 Formatação profissional** dos relatórios
+- **📱 Suporte a múltiplas datas** simultaneamente
+- **⚙️ Sistema de configuração** flexível
+- **📝 Logs detalhados** para debugging
+- **🔄 Carregamento automático** de dados
 
 ### 📊 Relatórios Gerados
-- **Planilha Excel** (`Motoboys_Nao_Escalados.xlsx`) com abas separadas por data
-- **PDF profissional** (`Motoboys_Nao_Escalados.pdf`) com layout elegante
 
-## 🛠️ Requisitos do Sistema
+- **📈 Planilha Excel** (`Motoboys_Nao_Escalados.xlsx`) com abas separadas por data
+- **📄 PDF profissional** (`Motoboys_Nao_Escalados.pdf`) com layout elegante
+- **📋 Logs detalhados** (`disponibilidade_motoboys.log`) para auditoria
+
+## 🛠️ Instalação
 
 ### 📋 Pré-requisitos
+
 - **Python 3.7+** instalado
 - **Planilhas de dados** no formato correto
-- **Bibliotecas Python** (instaladas automaticamente)
+- **Conexão com internet** (para instalação de dependências)
 
-### 📦 Bibliotecas Necessárias
-- `pandas` - Manipulação de dados
-- `tkinter` - Interface gráfica (incluído no Python)
-- `tkcalendar` - Calendário interativo
-- `reportlab` - Geração de PDF
-- `openpyxl` - Leitura/escrita de arquivos Excel
+### 🚀 Instalação Automática (Recomendada)
 
-## 📁 Estrutura de Arquivos
-
-```
-disponibilidade-durante-a-semana--main/
-├── disponibilidade da semana.py    # Script principal
-├── Entregadores.xlsx               # Planilha de cadastro dos motoboys
-├── Pedidos.xls                     # Planilha de agendamentos (atualizada constantemente)
-├── README.md                       # Este arquivo
-├── Motoboys_Nao_Escalados.xlsx     # Relatório Excel gerado
-└── Motoboys_Nao_Escalados.pdf      # Relatório PDF gerado
-```
-
-## 🚀 Instalação
-
-### 1. **Preparar o Ambiente**
 ```bash
-# Navegar para a pasta do projeto
+# 1. Clone ou baixe o repositório
+git clone <url-do-repositorio>
 cd disponibilidade-durante-a-semana--main
 
-# Instalar bibliotecas necessárias
-pip install pandas tkcalendar reportlab openpyxl
+# 2. Execute o script de inicialização
+python iniciar.py
 ```
 
-### 2. **Preparar as Planilhas**
-- **Entregadores.xlsx**: Deve conter colunas como `Nome`, `Telefone`, `Cidade`, `Bairro`, `CEP`
-- **Pedidos.xls**: Deve conter dados de agendamento com colunas de entregador e data
+O script `iniciar.py` irá:
+- ✅ Verificar a versão do Python
+- 📦 Instalar dependências automaticamente
+- 📁 Criar arquivos de exemplo
+- 🚀 Iniciar o sistema
 
-### 3. **Verificar Arquivos**
-- Certifique-se de que `Entregadores.xlsx` está na pasta
-- Coloque o arquivo `Pedidos.xls` atualizado na pasta antes de executar
+### 🔧 Instalação Manual
 
-## 📖 Como Usar
-
-### 🎯 Execução do Programa
 ```bash
-python "disponibilidade da semana.py"
+# 1. Instalar dependências
+pip install -r requirements.txt
+
+# 2. Criar arquivos de exemplo (opcional)
+python criar_exemplos.py
+
+# 3. Executar o sistema
+python disponibilidade_motoboys.py
 ```
 
-### 📋 Passo a Passo
+### 📦 Dependências
 
-1. **Iniciar o Programa**
-   - Execute o script Python
-   - A interface gráfica será aberta automaticamente
+| Biblioteca | Versão | Descrição |
+|------------|--------|-----------|
+| `pandas` | ≥1.5.0 | Manipulação de dados |
+| `tkcalendar` | ≥1.6.0 | Calendário interativo |
+| `reportlab` | ≥3.6.0 | Geração de PDF |
+| `openpyxl` | ≥3.0.0 | Leitura/escrita Excel |
+| `xlrd` | ≥2.0.0 | Suporte a .xls |
 
-2. **Selecionar Datas**
-   - **Duplo clique** em qualquer data no calendário para adicioná-la
-   - **Ou** selecione uma data e clique em "Adicionar Data"
-   - As datas selecionadas aparecerão na lista à direita
+## 🚀 Uso Rápido
 
-3. **Gerenciar Datas**
-   - **Adicionar**: Duplo clique no calendário ou botão "Adicionar Data"
-   - **Remover**: Selecione uma data na lista e clique "Remover Data"
-   - **Limpar**: Clique "Limpar Todas" para remover todas as datas
+### 1️⃣ **Preparar Dados**
+- Coloque `Entregadores.xlsx` na pasta do projeto
+- Coloque `Pedidos.xls` na pasta do projeto
 
-4. **Gerar Relatórios**
-   - Clique em "Gerar Relatório"
-   - Aguarde a mensagem de sucesso
-   - Os arquivos serão salvos na pasta do projeto
+### 2️⃣ **Executar Sistema**
+```bash
+python disponibilidade_motoboys.py
+```
+
+### 3️⃣ **Usar Interface**
+1. **Selecionar arquivos** (se não carregados automaticamente)
+2. **Escolher datas** no calendário (duplo clique)
+3. **Gerar relatórios** (botão "Gerar Relatórios")
+
+### 4️⃣ **Resultados**
+- 📊 `Motoboys_Nao_Escalados.xlsx` - Planilha com abas por data
+- 📄 `Motoboys_Nao_Escalados.pdf` - Relatório PDF profissional
+
+## 📖 Guia Completo
 
 ### 🎨 Interface Gráfica
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                Seleção de Datas para Análise                │
-├─────────────────────┬───────────────────────────────────────┤
-│ Calendário          │ Datas Selecionadas                    │
-│ (Duplo clique       │ ┌─────────────────────────────────────┐ │
-│ para adicionar)     │ │ 22/07/2025                          │ │
-│                     │ │ 23/07/2025                          │ │
-│ ┌─────────────────┐ │ │ 24/07/2025                          │ │
-│ │     JULHO       │ │ └─────────────────────────────────────┘ │
-│ │ 2025            │ │ [Adicionar] [Remover] [Limpar Todas]   │
-│ │                 │ │                                       │
-│ │  Su Mo Tu We    │ │                                       │
-│ │  Th Fr Sa       │ │                                       │
-│ └─────────────────┘ │                                       │
-├─────────────────────┴───────────────────────────────────────┤
-│                    [Gerar Relatório] [Sair]                │
-└─────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────┐
+│                Sistema de Disponibilidade de Motoboys           │
+├─────────────────────────────────────────────────────────────────┤
+│ Arquivos de Dados                                               │
+│ Cadastro: [Entregadores.xlsx] [Selecionar]                     │
+│ Agendamento: [Pedidos.xls] [Selecionar]                        │
+├─────────────────────────────────────────────────────────────────┤
+│ Calendário (Duplo clique)    │ Datas Selecionadas              │
+│ ┌─────────────────────────┐  │ ┌─────────────────────────────┐ │
+│ │        JULHO 2024       │  │ │ 22/07/2024                  │ │
+│ │                         │  │ │ 23/07/2024                  │ │
+│ │  Su Mo Tu We Th Fr Sa   │  │ │ 24/07/2024                  │ │
+│ │                         │  │ └─────────────────────────────┘ │
+│ │                         │  │ [Adicionar] [Remover] [Limpar] │
+│ └─────────────────────────┘  │                                 │
+├─────────────────────────────────────────────────────────────────┤
+│ [Gerar Relatórios] [Configurações] [Sair]                      │
+└─────────────────────────────────────────────────────────────────┘
 ```
+
+### 📋 Passo a Passo Detalhado
+
+#### **Passo 1: Preparação dos Dados**
+1. **Planilha de Cadastro** (`Entregadores.xlsx`):
+   - Deve conter colunas: `Nome`, `Telefone`, `Cidade`, `Bairro`, `CEP`
+   - Cada linha representa um motoboy cadastrado
+
+2. **Planilha de Agendamento** (`Pedidos.xls`):
+   - Deve conter colunas de entregador e data de agendamento
+   - Cada linha representa um agendamento
+
+#### **Passo 2: Execução do Sistema**
+1. Execute `python disponibilidade_motoboys.py`
+2. A interface gráfica será aberta automaticamente
+3. Se os arquivos estiverem na pasta, serão carregados automaticamente
+
+#### **Passo 3: Seleção de Datas**
+1. **Duplo clique** em qualquer data no calendário para adicioná-la
+2. **Ou** selecione uma data e clique em "Adicionar Data"
+3. As datas selecionadas aparecerão na lista à direita
+4. Use os botões para gerenciar a lista de datas
+
+#### **Passo 4: Geração de Relatórios**
+1. Clique em "Gerar Relatórios"
+2. Aguarde a mensagem de sucesso
+3. Os arquivos serão salvos na pasta do projeto
 
 ## 📊 Formato das Planilhas
 
 ### 📋 Entregadores.xlsx
+
 | Nome | Telefone | Cidade | Bairro | CEP |
 |------|----------|--------|--------|-----|
 | João Silva | 11999999999 | São Paulo | Centro | 01234-567 |
 | Maria Santos | 11888888888 | São Paulo | Vila Madalena | 05433-000 |
+| Pedro Oliveira | 11777777777 | São Paulo | Moema | 04038-001 |
+
+**Colunas obrigatórias:**
+- `Nome` - Nome completo do motoboy
+- `Telefone` - Número de telefone (texto)
+- `Cidade` - Cidade de atuação
+- `Bairro` - Bairro de atuação
+- `CEP` - CEP do bairro
 
 ### 📋 Pedidos.xls
-- **Cabeçalho**: Linha 4 (ajustável no código se necessário)
-- **Colunas**: Entregador, Data de agendamento, etc.
-- **Formato**: Detectado automaticamente pelo programa
 
-## 🔧 Configurações Avançadas
+| Data de Agendamento | Entregador | Cliente | Endereço | Valor |
+|---------------------|------------|---------|----------|-------|
+| 22/07/2024 08:00 | joão silva | Cliente A | Rua A 123 | 25.50 |
+| 22/07/2024 09:30 | maria santos | Cliente B | Rua B 456 | 30.00 |
 
-### 📝 Ajustar Linha do Cabeçalho
+**Colunas obrigatórias:**
+- Coluna com data de agendamento (detectada automaticamente)
+- Coluna com nome do entregador (detectada automaticamente)
+
+**Formato de data:** `DD/MM/AAAA HH:MM`
+
+## ⚙️ Configuração
+
+### 📝 Arquivo config.json
+
+```json
+{
+    "arquivos": {
+        "cadastro": "Entregadores.xlsx",
+        "agendamento": "Pedidos.xls"
+    },
+    "planilha": {
+        "header_agendamento": 3,
+        "colunas_cadastro": ["nome", "telefone", "cidade", "bairro", "cep"],
+        "coluna_entregador": "entregador",
+        "coluna_data": "data_agendamento"
+    },
+    "relatorio": {
+        "formato_data": "%d/%m/%Y",
+        "nome_excel": "Motoboys_Nao_Escalados.xlsx",
+        "nome_pdf": "Motoboys_Nao_Escalados.pdf"
+    },
+    "interface": {
+        "titulo": "Sistema de Disponibilidade de Motoboys",
+        "largura": 900,
+        "altura": 700
+    }
+}
+```
+
+### 🔧 Personalizações Comuns
+
+#### **Ajustar Linha do Cabeçalho**
 Se o cabeçalho da planilha `Pedidos.xls` estiver em uma linha diferente:
 
-```python
-# No arquivo disponibilidade da semana.py, linha 25
-self.agendamento_df = pd.read_excel(agendamento_path, header=3)  # Mude o número 3
+```json
+{
+    "planilha": {
+        "header_agendamento": 2  // Mude para a linha correta
+    }
+}
 ```
 
-### 🎨 Personalizar Colunas
+#### **Personalizar Colunas do Relatório**
 Para incluir/excluir colunas no relatório:
 
-```python
-# No arquivo disponibilidade da semana.py, linha 180
-colunas_desejadas = [col for col in ['nome', 'telefone', 'cidade', 'bairro', 'cep'] if col in self.cadastro_df.columns]
+```json
+{
+    "planilha": {
+        "colunas_cadastro": ["nome", "telefone", "cidade", "bairro", "cep", "observacoes"]
+    }
+}
 ```
 
-## 🚨 Solução de Problemas
+#### **Alterar Nomes dos Arquivos**
+Para personalizar os nomes dos relatórios gerados:
 
-### ❌ Erro: "FileNotFoundError: 'Pedidos.xls'"
-**Causa**: Arquivo não encontrado na pasta
-**Solução**: 
-- Verifique se `Pedidos.xls` está na pasta do projeto
-- Confirme o nome exato do arquivo (maiúsculas/minúsculas)
+```json
+{
+    "relatorio": {
+        "nome_excel": "Relatorio_Disponibilidade.xlsx",
+        "nome_pdf": "Relatorio_Disponibilidade.pdf"
+    }
+}
+```
+
+## 🔧 Solução de Problemas
+
+### ❌ Erro: "FileNotFoundError"
+
+**Causa:** Arquivo não encontrado na pasta
+**Solução:**
+- Verifique se os arquivos estão na pasta do projeto
+- Confirme os nomes exatos dos arquivos
+- Use a interface para selecionar os arquivos manualmente
 
 ### ❌ Erro: "PermissionError: Permission denied"
-**Causa**: Arquivo Excel/PDF aberto em outro programa
-**Solução**:
+
+**Causa:** Arquivo Excel/PDF aberto em outro programa
+**Solução:**
 - Feche o arquivo `Motoboys_Nao_Escalados.xlsx` se estiver aberto
 - Delete o arquivo existente antes de gerar novo
+- Verifique se não há outros programas usando os arquivos
 
 ### ❌ Erro: "Coluna 'entregador' não encontrada"
-**Causa**: Estrutura da planilha diferente do esperado
-**Solução**:
+
+**Causa:** Estrutura da planilha diferente do esperado
+**Solução:**
 - Verifique se a planilha `Pedidos.xls` tem a estrutura correta
-- Ajuste a linha do cabeçalho se necessário
+- Ajuste a linha do cabeçalho no `config.json`
+- Use os arquivos de exemplo como referência
 
 ### ❌ Erro: "Biblioteca não encontrada"
-**Causa**: Bibliotecas não instaladas
-**Solução**:
+
+**Causa:** Dependências não instaladas
+**Solução:**
 ```bash
-pip install tkcalendar reportlab pandas openpyxl
+pip install -r requirements.txt
 ```
 
 ### ⚠️ Aviso: "Parsing dates in %d/%m/%Y format"
-**Causa**: Formato de data brasileiro
-**Solução**: O programa já trata automaticamente com `dayfirst=True`
+
+**Causa:** Formato de data brasileiro
+**Solução:** O programa já trata automaticamente com `dayfirst=True`
+
+### 🔍 Logs e Debugging
+
+O sistema gera logs detalhados em `disponibilidade_motoboys.log`:
+
+```bash
+# Visualizar logs em tempo real
+tail -f disponibilidade_motoboys.log
+
+# Visualizar últimos logs
+tail -n 50 disponibilidade_motoboys.log
+```
 
 ## 📈 Exemplos de Uso
 
 ### 🎯 Cenário 1: Análise Semanal
+```bash
+# Objetivo: Ver disponibilidade da semana toda
+# Passos:
 1. Selecione 7 datas consecutivas (segunda a domingo)
 2. Gere relatório para ver disponibilidade da semana toda
+3. Analise as abas do Excel para cada dia
+```
 
-### 🎯 Cenário 2: Análise Específica
+### 🎯 Cenário 2: Análise de Feriados
+```bash
+# Objetivo: Verificar disponibilidade em datas específicas
+# Passos:
 1. Selecione apenas datas importantes (feriados, eventos)
 2. Gere relatório focado nessas datas
+3. Compare com dias normais
+```
 
 ### 🎯 Cenário 3: Comparação Mensal
+```bash
+# Objetivo: Comparar disponibilidade entre períodos
+# Passos:
 1. Selecione datas do início e fim do mês
 2. Compare disponibilidade entre períodos
+3. Identifique padrões de disponibilidade
+```
 
-## 🔄 Atualizações
+### 🎯 Cenário 4: Análise de Capacidade
+```bash
+# Objetivo: Verificar se há motoboys suficientes
+# Passos:
+1. Selecione datas de alta demanda
+2. Gere relatório de disponíveis
+3. Compare com demanda esperada
+```
 
-### 📅 Atualizar Dados
-- **Entregadores.xlsx**: Atualize quando houver novos cadastros
-- **Pedidos.xls**: Substitua sempre que houver novos agendamentos
+## 📁 Estrutura do Projeto
 
-### 🔧 Atualizar Script
-- O script detecta automaticamente mudanças nas planilhas
-- Não é necessário reconfigurar após atualizações
+```
+disponibilidade-durante-a-semana--main/
+├── 📄 disponibilidade_motoboys.py    # Script principal
+├── 🚀 iniciar.py                     # Script de inicialização
+├── 📋 criar_exemplos.py              # Gerador de exemplos
+├── ⚙️ config.json                    # Configurações
+├── 📦 requirements.txt               # Dependências
+├── 📖 README.md                      # Este arquivo
+├── 📁 exemplos/                      # Arquivos de exemplo
+│   ├── 📊 Entregadores_Exemplo.xlsx
+│   └── 📊 Pedidos_Exemplo.xlsx
+└── 📝 disponibilidade_motoboys.log   # Logs (gerado automaticamente)
+```
 
-## 📞 Suporte
+## 🤝 Contribuição
 
 ### 🐛 Reportar Problemas
-Se encontrar algum erro:
-1. Verifique se todos os arquivos estão na pasta correta
-2. Confirme se as bibliotecas estão instaladas
-3. Verifique o formato das planilhas
-4. Execute novamente o script
+1. Verifique se o problema já foi reportado
+2. Inclua informações detalhadas:
+   - Versão do Python
+   - Sistema operacional
+   - Mensagens de erro completas
+   - Passos para reproduzir
 
-### 💡 Dicas
-- **Mantenha backup** das planilhas originais
-- **Feche arquivos Excel** antes de gerar novos relatórios
-- **Use datas específicas** para análises mais precisas
-- **Verifique os relatórios** gerados para confirmar os dados
+### 💡 Sugerir Melhorias
+1. Descreva a funcionalidade desejada
+2. Explique o benefício para outros usuários
+3. Inclua exemplos de uso se possível
+
+### 🔧 Desenvolvimento
+1. Fork o repositório
+2. Crie uma branch para sua feature
+3. Faça commit das mudanças
+4. Abra um Pull Request
 
 ## 📄 Licença
 
@@ -220,4 +385,22 @@ Este projeto é de uso livre para fins comerciais e pessoais.
 
 ---
 
+## 🆘 Suporte
+
+### 📞 Contato
+- **Issues:** Use a aba Issues do GitHub
+- **Documentação:** Consulte este README
+- **Exemplos:** Veja a pasta `exemplos/`
+
+### 💡 Dicas
+- **Mantenha backup** das planilhas originais
+- **Feche arquivos Excel** antes de gerar novos relatórios
+- **Use datas específicas** para análises mais precisas
+- **Verifique os relatórios** gerados para confirmar os dados
+- **Consulte os logs** em caso de problemas
+
+---
+
 **Desenvolvido para otimizar a gestão de disponibilidade de motoboys** 🚚✨
+
+*Versão 2.0 - Sistema completamente reformulado com interface moderna e funcionalidades avançadas*
